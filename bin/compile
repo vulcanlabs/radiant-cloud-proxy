@@ -6,11 +6,11 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
-if [ ! -f $CACHE_DIR/cloud_sql_proxy ]; then
+# if [ ! -f $CACHE_DIR/cloud_sql_proxy ]; then
 	echo "-----> Downloading cloud_sql_proxy"
 	mkdir -p $CACHE_DIR
 	wget https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.12.0/cloud-sql-proxy.linux.amd64 -O $CACHE_DIR/cloud_sql_proxy
-fi
+# fi
 
 echo "-----> Vendoring cloud_sql_proxy into slug"
 if [ ! -d $BUILD_DIR/google/bin ]; then
